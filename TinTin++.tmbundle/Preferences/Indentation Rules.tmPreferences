@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Indentation Rules</string>
+	<key>settings</key>
+	<dict>
+		<key>decreaseIndentPattern</key>
+		<string>(?x)
+	    ^ \s* ( (?! \S.* /[*] ) .* [*]/ \s* )? \}
+	</string>
+		<key>increaseIndentPattern</key>
+		<string>(?x)
+	    ^ .* \{ [^}"']* $
+	|   ^ \s* \{ \} $
+	</string>
+		<key>indentNextLinePattern</key>
+		<string>(?x)^
+	    (?! .* [;:{},] \s*                  # do not indent when line ends with ;, :, {, }, or comma
+	        ( // .* | /[*] .* [*]/ \s* )? $ #  …account for potential trailing comment
+	    |   #nop     
+	    )
+	    .                                  # the negative look-ahead above means we don’t care about what we match here
+	</string>
+		<key>unIndentedLinePattern</key>
+		<string>^\s*((/\*|\*/|//|template\b.*?&gt;(?!\(.*\))|@protocol|@optional|@interface(?!.*\{)|@implementation|@end).*)?$</string>
+		<key>zeroIndentPattern</key>
+		<string>^\s*#nop</string>
+	</dict>
+	<key>uuid</key>
+	<string>468A8432-B618-4D3B-8456-E239AE92B2C1</string>
+</dict>
+</plist>
